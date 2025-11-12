@@ -9,37 +9,37 @@ namespace Fogado.Controllers
         [ApiController]
         public class SzobakController : ControllerBase
         {
-            private readonly FogadoContext _context;
+            private readonly FogadoDbContext _context;
 
-            public SzobakController(FogadoContext context)
+            public SzobakController(FogadoDbContext context)
             {
                 _context = context;
             }
 
             [HttpGet]
-            public async Task<ActionResult<IEnumerable<Szoba>>> GetSzobak()
+            public async Task<ActionResult<IEnumerable<Szobak>>> GetSzobak()
             {
-                return await _context.Szobak.ToListAsync();
+                return await _context.Szoba.ToListAsync();
             }
 
             [HttpGet("{id}")]
-            public async Task<ActionResult<Szoba>> GetSzoba(int id)
+            public async Task<ActionResult<Szobak>> GetSzoba(int id)
             {
-                var szoba = await _context.Szobak.FindAsync(id);
+                var szoba = await _context.Szoba.FindAsync(id);
                 if (szoba == null) return NotFound();
                 return szoba;
             }
 
             [HttpPost]
-            public async Task<ActionResult<Szoba>> PostSzoba(Szoba szoba)
+            public async Task<ActionResult<Szobak>> PostSzoba(Szobak szoba)
             {
-                _context.Szobak.Add(szoba);
+                _context.Szoba.Add(szoba);
                 await _context.SaveChangesAsync();
                 return CreatedAtAction(nameof(GetSzoba), new { id = szoba.Szazon }, szoba);
             }
 
             [HttpPut("{id}")]
-            public async Task<IActionResult> PutSzoba(int id, Szoba szoba)
+            public async Task<IActionResult> PutSzoba(int id, Szobak szoba)
             {
                 if (id != szoba.Szazon) return BadRequest();
                 _context.Entry(szoba).State = EntityState.Modified;
@@ -50,9 +50,9 @@ namespace Fogado.Controllers
             [HttpDelete("{id}")]
             public async Task<IActionResult> DeleteSzoba(int id)
             {
-                var szoba = await _context.Szobak.FindAsync(id);
+                var szoba = await _context.Szoba.FindAsync(id);
                 if (szoba == null) return NotFound();
-                _context.Szobak.Remove(szoba);
+                _context.Szoba.Remove(szoba);
                 await _context.SaveChangesAsync();
                 return NoContent();
             }

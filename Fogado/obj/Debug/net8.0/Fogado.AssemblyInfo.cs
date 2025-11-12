@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Fogado")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d4f662f6750873e5b3cbdf33835562926d4d95a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8fa5767c5154e76a98279f5e6e1cbdb5d0fb6df7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Fogado")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Fogado")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
