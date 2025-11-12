@@ -2,7 +2,7 @@
 {
     public class Foglalasok
     {
-        public int fsorsz { get; set; }
+        public static int fsorsz { get; set; }
         public int vendeg { get; set; }
         public int szoba { get; set; }
         public DateTime erk { get; set; }

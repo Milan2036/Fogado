@@ -17,9 +17,9 @@ namespace Fogado.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Foglalasok>>> GetFoglalasok()
         {
-            return await _context.Foglalasok
-                .Include(f => f.Vendegek)
-                .Include(f => f.Szobak)
+            return await _context.Foglalas
+                .Include(f => f.vendeg)
+                .Include(f => f.szoba)
             .ToListAsync();
         }
 
@@ -31,5 +31,4 @@ namespace Fogado.Controllers
             return CreatedAtAction(nameof(GetFoglalasok), new { id = Foglalasok.fsorsz }, foglalas);
         }
     }
-}
 }
