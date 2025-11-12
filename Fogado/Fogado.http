@@ -1,0 +1,6 @@
+@Fogado_HostAddress = http://localhost:5001
+
+GET {{Fogado_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
