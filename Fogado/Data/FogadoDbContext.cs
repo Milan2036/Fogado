@@ -12,5 +12,7 @@ namespace Fogado.Data
         }
 
         public DbSet<Foglalasok> Foglalas { get; set; }
+        public DbSet<Szobak> Szoba { get; set; }
+        public DbSet<Vendegek> Vendeg { get; set; }
     }
 }

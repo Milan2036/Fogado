@@ -1,17 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Fogado.Models
+namespace Fogado.DTOs
 {
-    public class Vendegek
+    public class VendegekDTO
     {
-        [Key]
         public int Vsorsz { get; set; }
-
-        [Required]
         public string Vnev { get; set; }
 
         public int Irsz { get; set; }
-
-        public ICollection<Foglalasok> Foglalas { get; set; }
     }
 }
